@@ -1,0 +1,241 @@
+header {
+    text-align: center;
+    background-color: navy;
+    color: white;
+}
+
+.use {
+    text-align: center;
+}
+
+a:hover {
+    color:darkblue;
+    text-decoration: underline;
+}
+
+a:visited {
+    color:blue;
+}
+
+a {
+    text-decoration: none;
+    color: lightblue;
+}
+
+
+html {
+  font-size: 16px; 
+  background-color: white;
+}
+
+body {
+  font-size: 1rem;    
+  line-height: 1.5;
+  height: 100vh;
+  margin: 0;
+}
+
+
+h1 {
+  font-size: 2rem;    
+}
+
+h2 {
+  font-size: 1.5rem; 
+  color: navy;
+}
+
+h3 {
+  font-size: 1.25rem; 
+  color: navy;
+}
+
+p, li {
+  font-size: 1rem;     
+}
+
+p {
+  color: darkgray;
+}
+
+li {
+  color: darkgray;
+}
+
+section {
+  margin-bottom: 2rem; 
+  padding: 1.5rem 1rem;
+}
+
+section + section {
+  border-top: 1px solid #333;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+a[href*="drive.google.com"] {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  background-color: rgb(17, 80, 197);
+  color: white !important; 
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+a[href*="drive.google.com"]:hover {
+  background-color: rgba(16, 102, 206, 0.666);
+  color: white !important;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgb(17, 80, 197);
+  color: darkgray;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+nav a {
+  color: navy;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: teal;
+}
+
+@media (max-width: 600px) {
+  #logo {
+    margin: 0 auto 1rem;
+  }
+}
+
+.navigation {
+  display: flex;
+  gap: 15px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.close-menu {
+  visibility: hidden;
+  opacity: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.overlay {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 85%;
+    height: calc(100vh - 70px);
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    padding: 20px 0;
+
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.3s ease;
+  }
+
+  .navigation.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    z-index: 1001;
+  }
+
+  .overlay {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        z-index: 1000;
+    }
+
+  .overlay.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    backdrop-filter: blur(10px);
+  }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  .close-menu {
+    visibility: visible;
+    opacity: 1;
+  }
+}
